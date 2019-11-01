@@ -1,7 +1,7 @@
 # Util Packages  
 ## 1. ArrayList  
 ### Constructor
-  `ArrayList<Obj> arrayList = new ArrayList<Obj>();` 
+  `List<Obj> arrayList = new ArrayList<Obj>();` 
 ### Methods 
   * **get(idx)**: Return the value refer to the index (start from 0)  
   * **add(elem)**: Add the elem into the end of arrayList  
@@ -14,11 +14,12 @@
 ### Constructor  
   `HashMap<K, V> hashMap = new HashMap<K, V>(int initialCapacity);`  
 ### Methods  
+
   * **put(K, V)**: Associates the specified value with the specified key in this map(putIfAbsent(K, V))  
   * **get(K)**: Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key  
-  * **containsKey()**: Returns true if this map contains a mapping for the specified key  
-  * **containsValue()**: Returns true if this map maps one or more keys to the specified value  
-  * **remove()**: Removes the entry for the specified key only if it is currently mapped to the specified value   
+  * **containsKey(Object key)**: Returns true if this map contains a mapping for the specified key  
+  * **containsValue(Object value)**: Returns true if this map maps one or more keys to the specified value  
+  * **remove(Object key)**: Removes the entry for the specified key only if it is currently mapped to the specified value   
   * **clear()**: Remove all mapping from the map 
   * **size()**: Returns the number of key-value mappings in this map  
   * **isEmpty()**: Returns true if this map contains no key-value mappings
@@ -38,7 +39,8 @@
 ### Constructor
   `Deque<Integer> stack = new ArrayDeque<Integer>();`
 ### Methods  
-![alt text](deque.png)
+![dequeImg](deque.png)  
+
 note: Prefer using offer/poll/peek set since they return boolean to indicates successfulness
 ***
 ## 5. String
@@ -71,12 +73,12 @@ note: Prefer using offer/poll/peek set since they return boolean to indicates su
 ### Constructor
 `PriorityQueue<Class> pq = new PriorityQueue<Class>(int initialCapacity, Comparator<? super E> comparator);`
 ### Methods
- * **add(E e)**:Inserts the specified element into this priority queue; return boolean
- * **contains(Obj)**: Returns true if this queue contains the specified element.
- * **offer(E e)**: Inserts the specified element into this priority queue; return boolean
- * **peek()**: Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
- * **poll()**: Retrieves and removes the head of this queue, or returns null if this queue is empty.
- * **remove(Obj)**: Removes a single instance of the specified element from this queue, if it is present.
+ * **add(E e)**:Inserts the specified element into this priority queue; return boolean. Time complexity: **_O(log(n))_**
+ * **contains(Obj)**: Returns true if this queue contains the specified element. Time complexity: **_O(n)_**
+ * **offer(E e)**: Inserts the specified element into this priority queue; return boolean. Time complexity: **_O(log(n))_**
+ * **peek()**: Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty. **_O(1)_**
+ * **poll()**: Retrieves and removes the head of this queue, or returns null if this queue is empty.**_O(1)_**
+ * **remove(Obj)**: Removes a single instance of the specified element from this queue, if it is present. **_Find the element O(n), remove it O(log(n))_**
  * **size()**: Returns the number of elements in this collection.
  * **clear()**: Removes all of the elements from this priority queue.
  * **toArray()**: Returns an array containing all of the elements in this queue.
